@@ -1,26 +1,27 @@
 <template>
-    <ul>
-        <NavLi :count="list"/>
+    <ul class="menu">
+        <!-- <p>{{NavMainList}}</p> -->
+        <MainNavLi :MainLi="NavMainList" />
+        <SubNavLi :subLi="NavSublist" />
     </ul>
 </template>
 <script>
-import NavLi from './main_nav_li.vue';
+
+import MainNavLi from './Main-NavLi.vue';
+import SubNavLi from './Sub-NavLi.vue';
 export default {
     props :{
-        list : Array,
+        NavMainList : Object,
+        NavSublist : Array,
     },
     components:{
-        NavLi,
+        SubNavLi,
+        MainNavLi,
     }
 }
 </script>
 <style>
-ul{
+.menu{
     list-style: none;
-}
-ul > li{
-    float: left;
-    margin: 10px;
-    font-size: 18px;
 }
 </style>
